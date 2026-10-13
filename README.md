@@ -4,13 +4,13 @@
 
 > Scan your own network. Don't be a jerk.
 
-SanderScan — LAN & port scanner ringan yang nyaman dipakai di phone dan PC.
+SanderScan is a lightweight LAN and port scanner built for both phone and PC.
 
 ## Quick highlights
 - Auto-detect network
-- Multi-thread (250 threads)
-- Banner grabbing & MAC vendor
-- Simple CSV / JSON export
+- Multi-threaded scanning (250 threads)
+- Banner grabbing and MAC vendor lookup
+- CSV / JSON export
 
 ## Quick start
 ```bash
@@ -21,26 +21,27 @@ java SanderScan 192.168.1.1 22,80,443
 ```
 
 ## Notes
-- UDP scan kadang nggak respon — itu normal.
-- OS detection pakai TTL + tebakan vendor.
-- 250 threads = panasin phone (intended).
+- UDP scans may appear empty — that is normal.
+- OS detection uses TTL + vendor guessing.
+- 250 threads can warm up your phone — intentional.
 
-## About this repo
+## About this project
 This project was built with help from AI tools as assistants, not replacements.
 
 | Role | Contributor |
 |------|-------------|
 | Idea & Architecture | Me (human) |
-| Logic checks | Qwen 3.8 |
-| Debug help | DeepSeek v4.1 Pro |
-| Repo & README help | GitHub Copilot |
+| Logic Checks | Qwen 3.8 |
+| Debug Help | DeepSeek v4.1 Pro |
+| Repo & README Help | GitHub Copilot |
 
 ---
 
-**Honesty:** saya ngerjain inti dan kontrol kualitas — AI bantu saat perlu. Kalau itu masalah, yeh, itu pilihan kamu 😎
+**Honesty:** I handled the core work and quality control. AI helped when needed. If that bothers you, that's your call.
 
 ## Disclaimer
-⚠️ WARNING — DANGEROUS TOOL  
+⚠️ WARNING — DANGEROUS TOOL
+
 Use only on networks you own. Unauthorized use may be illegal.
 
 ## License
