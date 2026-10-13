@@ -2,19 +2,22 @@
 
 LAN & Port Scanner for PC and Termux.
 
-## Versi
-- **PC** — Full fitur (TCP + UDP + ARP)
-- **Termux** — TCP only (keterbatasan Android)
+## Versions
 
-## Fitur
-- Auto-detect jaringan
+- **PC** — Full features (TCP + UDP + ARP)
+- **Termux** — TCP only (Android limitations)
+
+## Features
+
+- Auto-detect network
 - Multi-thread scanning
 - Banner grabbing
 - MAC vendor detection
 - OS Detection
-- Export CSV & JSON
+- Export to CSV & JSON
 
-## Cara Pakai
+## Usage
+
 ```bash
 javac SanderScan.java
 java SanderScan
