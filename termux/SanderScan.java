@@ -115,15 +115,15 @@ public class SanderScan {
     }
 
     static void usage() {
-        System.out.println(B + "SanderScan — auto scan network from Termux" + R);
+        System.out.println(B + "SanderScan — LAN & Port Scanner" + R);
         System.out.println();
         System.out.println("Usage:");
-        System.out.println("  java SanderScan                        # auto-deteksi Wi-Fi");
-        System.out.println("  java SanderScan 192.168.1.5            # 1 host, port umum");
-        System.out.println("  java SanderScan 192.168.1.0/24         # seluruh subnet");
-        System.out.println("  java SanderScan 192.168.1.1-50         # rentang IP");
-        System.out.println("  java SanderScan 192.168.1.5 1-1024     # rentang port");
-        System.out.println("  java SanderScan 192.168.1.5 22,80,443  # port tertentu");
+        System.out.println("  java SanderScan                        # auto-detect network");
+        System.out.println("  java SanderScan 192.168.1.5            # single host, top ports");
+        System.out.println("  java SanderScan 192.168.1.0/24         # full subnet");
+        System.out.println("  java SanderScan 192.168.1.1-50         # IP range");
+        System.out.println("  java SanderScan 192.168.1.5 1-1024     # port range");
+        System.out.println("  java SanderScan 192.168.1.5 22,80,443  # specific ports");
         System.out.println("  java SanderScan 192.168.1.1 --udp 53,161,67  # UDP scan");
     }
 
