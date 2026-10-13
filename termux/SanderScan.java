@@ -6,7 +6,19 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/*
+ * SanderScan — LAN & Port Scanner
+ * 
+ * WARNING: This code was written on a phone.
+ * If you see weird indentation, that's why.
+ * 
+ * Fun fact: The author once scanned his own router
+ * and found out it was running a 2005 web server.
+ * True story.
+ * 
+ * Don't touch the DISCOVERY array unless you know what you're doing.
+ * (You don't. Neither did I.)
+ */
 public class SanderScan {
 
     static final String R   = "\u001B[0m";
@@ -125,6 +137,9 @@ public class SanderScan {
         System.out.println("  java SanderScan 192.168.1.5 1-1024     # port range");
         System.out.println("  java SanderScan 192.168.1.5 22,80,443  # specific ports");
         System.out.println("  java SanderScan 192.168.1.1 --udp 53,161,67  # UDP scan");
+        System.out.println();
+        System.out.println(GRY + "If this tool breaks, it is not a bug. It is a feature." + R);
+        System.out.println(GRY + "If it works, it is a miracle." + R);
     }
 
     static String autoSubnet() throws Exception {

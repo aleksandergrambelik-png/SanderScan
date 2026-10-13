@@ -29,6 +29,20 @@ cd SanderScan/termux
 javac SanderScan.java
 java SanderScan 192.168.1.1 22,80,443
 
+## Known "Bugs" (Intentional)
+
+- **UDP scan says "No hosts responded"** — Not a bug. UDP is just shy.
+- **OS Detection says "Unknown"** — Your router is playing hard to get.
+- **250 threads make your phone warm** — That's not a bug, that's a feature. Free hand warmer.
+- **`--udp` on Android** — Android said "no" before you even asked.
+- **Exported CSV opens in Excel** — We're sorry in advance.
+
+## Easter Eggs
+
+- Type `java SanderScan -h` and read carefully.
+- There's a comment in the code that says "don't touch this".
+- If you find a real bug, congrats. You're hired.
+
 Disclaimer
 
 ⚠️ WARNING — DANGEROUS TOOL
