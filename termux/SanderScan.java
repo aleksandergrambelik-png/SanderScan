@@ -96,10 +96,10 @@ public class SanderScan {
             if (target == null) {
                 String net = autoSubnet();
                 if (net == null) {
-                    System.out.println(RED + "✗ Tidak bisa deteksi jaringan lokal." + R);
+                    System.out.println(RED + "✗ Cannot detect local network." + R);
                     return;
                 }
-                System.out.println(CYA + "i Jaringan terdeteksi: " + B + net + R);
+                System.out.println(CYA + "i Network detected: " + B + net + R);
                 hosts = cidr(net);
             } else {
                 hosts = expand(target);
@@ -115,9 +115,9 @@ public class SanderScan {
     }
 
     static void usage() {
-        System.out.println(B + "SanderScan — auto scan jaringan langsung dari Termux" + R);
+        System.out.println(B + "SanderScan — auto scan network from Termux" + R);
         System.out.println();
-        System.out.println("Pemakaian:");
+        System.out.println("Usage:");
         System.out.println("  java SanderScan                        # auto-deteksi Wi-Fi");
         System.out.println("  java SanderScan 192.168.1.5            # 1 host, port umum");
         System.out.println("  java SanderScan 192.168.1.0/24         # seluruh subnet");
@@ -173,7 +173,7 @@ public class SanderScan {
         long total = (0xFFFFFFFFL & ~mask) - 1;
         if (total < 1) total = 1;
         if (total > 1024) {
-            System.out.println(YEL + "! Subnet besar, dibatasi 1024 host" + R);
+            System.out.println(YEL + "! Large subnet, limited to 1024 hosts" + R);
             total = 1024;
         }
         List<String> out = new ArrayList<>((int) total);
@@ -225,7 +225,7 @@ public class SanderScan {
 
         ExecutorService pool = Executors.newFixedThreadPool(THREADS);
 
-        System.out.println(CYA + "► Fase 1/2  mencari host aktif…" + R);
+        System.out.println(CYA + "► Fase 1/2  searching for active hosts…" + R);
         List<String> alive = Collections.synchronizedList(new ArrayList<>());
         AtomicInteger cnt = new AtomicInteger();
 
@@ -243,14 +243,14 @@ public class SanderScan {
         System.out.println();
 
         if (alive.isEmpty()) {
-            System.out.println(YEL + "  Tidak ada host yang merespons." + R);
-            System.out.println(GRY + "  Tip: pastikan Wi-Fi nyala & HP satu jaringan dengan target." + R);
+            System.out.println(YEL + "  No hosts responded." + R);
+            System.out.println(GRY + "  Tip: make sure Wi-Fi is on & your device is on the same network." + R);
             return;
         }
 
         List<String> sorted = new ArrayList<>(alive);
         sorted.sort(Comparator.comparingLong(x -> ipKey(x)));
-        System.out.println(GRN + "  ✓ " + sorted.size() + " host aktif ditemukan" + R);
+        System.out.println(GRN + "  ✓ " + sorted.size() + " active hosts found" + R);
 
         System.out.println();
         System.out.println(CYA + "► Fase 2/2  port scan…" + R);
@@ -309,16 +309,16 @@ public class SanderScan {
         }
 
         if (totalOpen == 0) {
-            System.out.println(YEL + "  Tidak ada port terbuka di daftar yang discan." + R);
+            System.out.println(YEL + "  No open ports found." + R);
         }
 
         System.out.println();
-        System.out.println(B + GRN + "✓ Selesai" + R + GRY + " — "
+        System.out.println(B + GRN + "✓ Done" + R + GRY + " — "
                 + ((System.currentTimeMillis() - t0) / 1000.0) + "s, "
-                + totalOpen + " port terbuka" + R);
+                + totalOpen + " open ports" + R);
 
         if (!found.isEmpty()) {
-            System.out.println(CYA + "► Export hasil..." + R);
+            System.out.println(CYA + "► Exporting results..." + R);
             exportCSV(found, arp);
             exportJSON(found, arp);
         }
@@ -414,9 +414,9 @@ public class SanderScan {
                             + svc + "\n");
                 }
             }
-            System.out.println(GRN + "✓ Hasil disimpan ke scan_result.csv" + R);
+            System.out.println(GRN + "✓ Results saved to scan_result.csv" + R);
         } catch (IOException e) {
-            System.out.println(RED + "✗ Gagal export CSV: " + e.getMessage() + R);
+            System.out.println(RED + "✗ Failed to export CSV: " + e.getMessage() + R);
         }
     }
 
@@ -449,9 +449,9 @@ public class SanderScan {
                 fw.write("\n");
             }
             fw.write("}\n");
-            System.out.println(GRN + "✓ Hasil disimpan ke scan_result.json" + R);
+            System.out.println(GRN + "✓ Results saved to scan_result.json" + R);
         } catch (IOException e) {
-            System.out.println(RED + "✗ Gagal export JSON: " + e.getMessage() + R);
+            System.out.println(RED + "✗ Failed to export JSON: " + e.getMessage() + R);
         }
     }
 
