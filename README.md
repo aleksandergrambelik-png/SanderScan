@@ -28,6 +28,7 @@ git clone https://github.com/aleksandergrambelik-png/SanderScan.git
 cd SanderScan/termux
 javac SanderScan.java
 java SanderScan 192.168.1.1 22,80,443
+```
 
 ## Known "Bugs" (Intentional)
 
@@ -43,7 +44,26 @@ java SanderScan 192.168.1.1 22,80,443
 - There's a comment in the code that says "don't touch this".
 - If you find a real bug, congrats. You're hired.
 
-Disclaimer
+This project was built with AI. Here's the breakdown:
+
+| Role | Contributor |
+|-------|-------------|
+| 💡 **Idea & Architecture** | Me (human) |
+| ✅ **Boolean Logic Verification** | ![Qwen](https://img.shields.io/badge/Qwen_3.8-6A0DAD?style=flat-square) |
+| 🐛 **Realtime Code Debugging** | ![DeepSeek](https://img.shields.io/badge/DeepSeek_v4.1_Pro-0A66C2?style=flat-square) |
+| 📁 **Repo Structure & README** | ![Copilot](https://img.shields.io/badge/GitHub_Copilot-181717?style=flat-square&logo=github) |
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Made_with-AI_Collaboration-FF6B6B?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/From-Indonesia-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Device-Phone_Only-blue?style=for-the-badge" />
+</p>
+
+---
+
+**Honesty is number one.** I didn't write every line myself. I used AI as a partner, not a replacement. The idea is mine, the execution was assisted. If you think that's "cheating", that's your problem. I'm proud of what I built. 🗿
+
+## Disclaimer
 
 ⚠️ WARNING — DANGEROUS TOOL
 
@@ -52,12 +72,10 @@ Unauthorized use is a CRIMINAL OFFENSE.
 
 Use only on your own network.
 
-License
+## License
 
 MIT License — see LICENSE file.
 
 ---
 
 Made with ❤️ and too much coffee, from a phone.
-
-```
